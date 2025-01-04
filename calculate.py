@@ -36,4 +36,4 @@ for i in range(max_prime_number + 1, max_prime_number + 101):
       denominator = denominator * (i_square - 1)
       numerator = numerator * i_square
 
-console.log(numerator/denominator)
+print(numerator/denominator)
