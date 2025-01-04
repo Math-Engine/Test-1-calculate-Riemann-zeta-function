@@ -1,0 +1,19 @@
+name: Test-1-calculate-Riemann-zeta-function
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: my-workflow-group
+
+jobs:
+  calculate:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+    - name: Run calculate.py
+      run: python calculate.py
