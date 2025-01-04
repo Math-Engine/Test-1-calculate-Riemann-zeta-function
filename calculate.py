@@ -10,17 +10,13 @@ def isPrime(n):
   return True
 
 with open('max_prime_number.txt', 'r') as f:
-  max_prime_number = f
+  max_prime_number = int(f.read().strip())
 
 with open('denominator.txt', 'r') as f:  
-  denominator = f
+  denominator = int(f.read().strip())
 
 with open('numerator.txt', 'r') as f:
-  numerator = f
-
-max_prime_number = int(max_prime_number)
-denominator = int(denominator)
-numerator = int(numerator)
+  numerator = int(f.read().strip())
 
 gap = -314
 past_i = "none"
