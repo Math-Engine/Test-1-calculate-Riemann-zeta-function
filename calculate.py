@@ -3,11 +3,21 @@ import os
 
 sys.set_int_max_str_digits(2147483647)
 
+# 짝수인 자연수만 연산 가능
+def dividing_2(n):
+  if (len(str(n)) < 16):
+    return n//2
+  return int(str((n * 5))[0:len(str(n * 5)) - 1])
+
+# 3 이상의 자연수만 소수 판별 가능 
 def isPrime(n):
-  for i in range(2, n//2 + 1):
-    if n % i == 0:
-      return False
-  return True
+  if (int(str(n)[-1])%2 == 1):
+    for i in range(2, dividing_2(n + 1)):
+      if n % i == 0:
+        return False
+    return True
+  else:
+    return False
 
 with open('max_prime_number.txt', 'r') as f:
   max_prime_number = int(f.read().strip())
