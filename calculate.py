@@ -30,7 +30,7 @@ with open('denominator.txt', 'r') as f:
 with open('numerator.txt', 'r') as f:
   numerator = int(f.read().strip())
 
-gap = -314
+gap = (param + 1) * (-1)
 past_i = "none"
 the_number_of_prime_numbers = 0
 for i in range(max_prime_number + 1, max_prime_number + 1 + param):
