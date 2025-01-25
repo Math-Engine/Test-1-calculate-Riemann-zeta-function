@@ -53,7 +53,7 @@ for i in range(max_prime_number + 1, max_prime_number + 1 + param):
 print(f"{numerator} / {denominator}")
 
 with open('max_checked_number.txt', 'w') as file:
-    file.write(str(max_prime_number + 1 + param))
+    file.write(str(max_prime_number + param))
 
 with open('max_prime_number.txt', 'w') as file:
     file.write(str(past_i))
@@ -67,6 +67,6 @@ with open('numerator.txt', 'w') as file:
 os.system(f'git config user.name "github-actions[bot]"')
 os.system(f'git config user.email "github-actions[bot]@users.noreply.github.com"')
 os.system(f'git add .')
-commit_message = f"[{max_prime_number + 1} ~ {max_prime_number + 1 + param}] {the_number_of_prime_numbers}개의 소수에 대해 계산"
+commit_message = f"[{max_prime_number + 1} ~ {max_prime_number + param}] {the_number_of_prime_numbers}개의 소수에 대해 계산"
 os.system(f'git commit --allow-empty -m "' + commit_message + '"')
 os.system(f'git push')
