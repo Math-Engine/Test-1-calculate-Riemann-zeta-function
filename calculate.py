@@ -3,6 +3,8 @@ import os
 
 sys.set_int_max_str_digits(2147483647)
 
+param = int(sys.argv[1])
+
 # 짝수인 자연수만 연산 가능
 def dividing_2(n):
   if (len(str(n)) < 16):
@@ -30,9 +32,11 @@ with open('numerator.txt', 'r') as f:
 
 gap = -314
 past_i = "none"
-for i in range(max_prime_number + 1, max_prime_number + 101):
+the_number_of_prime_numbers = 0
+for i in range(max_prime_number + 1, max_prime_number + 1 + param):
   gap = gap + 1
   if isPrime(i) == True:
+    the_number_of_prime_numbers = the_number_of_prime_numbers + 1
     if gap < 0:
       gap = 0
       past_i = i
@@ -47,3 +51,10 @@ for i in range(max_prime_number + 1, max_prime_number + 101):
       numerator = numerator * i_square
 
 print(numerator/denominator)
+
+os.system(f'git config user.name "github-actions[bot]"')
+os.system(f'git config user.email "github-actions[bot]@users.noreply.github.com"')
+os.system(f'git add .')
+commit_message = f"[{max_prime_number + 1} ~ {max_prime_number + 1 + param}] {the_number_of_prime_numbers}개의 소수에 대해 계산"
+os.system(f'git commit --allow-empty -m "' + commit_message + '"')
+os.system(f'git push')
