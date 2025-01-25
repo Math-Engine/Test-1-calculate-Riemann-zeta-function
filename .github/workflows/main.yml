@@ -2,6 +2,14 @@ name: Test-1-calculate-Riemann-zeta-function
 
 on:
   workflow_dispatch:
+    inputs:
+      n:
+        description: '확인 및 계산할 자연수의 개수'
+        required: false
+        default: '10'
+        type: string
+
+run-name: Test-1-calculate-Riemann-zeta-function [ ${{ github.event.inputs.n || '10' }} ]
 
 concurrency:
   group: my-workflow-group
@@ -16,4 +24,4 @@ jobs:
       with:
         python-version: '3.x'
     - name: Run calculate.py
-      run: python calculate.py
+      run: python calculate.py ${{ github.event.inputs.n || '10' }}
