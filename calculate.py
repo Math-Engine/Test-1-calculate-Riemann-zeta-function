@@ -50,7 +50,7 @@ for i in range(max_prime_number + 1, max_prime_number + 1 + param):
       denominator = denominator * (i_square - 1)
       numerator = numerator * i_square
 
-print(numerator/denominator)
+print(f"{numerator} / {denominator}")
 
 with open('max_checked_number.txt', 'w') as file:
     file.write(str(max_prime_number + 1 + param))
