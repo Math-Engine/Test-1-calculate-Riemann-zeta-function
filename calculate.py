@@ -37,20 +37,30 @@ for i in range(max_prime_number + 1, max_prime_number + 1 + param):
   gap = gap + 1
   if isPrime(i) == True:
     the_number_of_prime_numbers = the_number_of_prime_numbers + 1
+    gap = 0
+    past_i = i
     if gap < 0:
-      gap = 0
-      past_i = i
       i_square = i**2
       denominator = denominator * (i_square - 1)
       numerator = numerator * i_square
     else:
       i_square = i_square + (2 * gap * past_i) + gap**2
-      gap = 0
-      past_i = i
       denominator = denominator * (i_square - 1)
       numerator = numerator * i_square
 
 print(numerator/denominator)
+
+with open('max_checked_number.txt', 'w') as file:
+    file.write(str(max_prime_number + 1 + param))
+
+with open('max_prime_number.txt', 'w') as file:
+    file.write(str(past_i))
+
+with open('denominator.txt', 'w') as file:
+    file.write(str(denominator))
+
+with open('numerator.txt', 'w') as file:
+    file.write(str(numerator))
 
 os.system(f'git config user.name "github-actions[bot]"')
 os.system(f'git config user.email "github-actions[bot]@users.noreply.github.com"')
