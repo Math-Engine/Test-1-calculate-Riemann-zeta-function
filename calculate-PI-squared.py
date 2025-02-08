@@ -13,7 +13,7 @@ with open('numerator.txt', 'r') as f:
 
 getcontext().prec = denominator * numerator # 대충 충분히 큰 정수
 
-fraction = Fraction(numerator, denominator)
+fraction = Fraction(numerator * 6, denominator)
 
 decimal_value = Decimal(fraction.numerator) / Decimal(fraction.denominator)
 
@@ -25,4 +25,4 @@ print("\n\n")
 
 print("==========================================================================================")
 
-print(decimal_value * 6)
+print(decimal_value)
