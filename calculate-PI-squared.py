@@ -11,7 +11,7 @@ with open('denominator.txt', 'r') as f:
 with open('numerator.txt', 'r') as f:
   numerator = int(f.read().strip())
 
-getcontext().prec = denominator * numerator # 대충 충분히 큰 정수
+getcontext().prec = 2147483647
 
 fraction = Fraction(numerator * 6, denominator)
 
